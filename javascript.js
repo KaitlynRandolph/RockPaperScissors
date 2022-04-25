@@ -44,16 +44,14 @@ function isValid(selection) {
 function game() {
 	playerScore = 0;
 	computerScore = 0;
-	for (let i = 0; i < 5; i++) {
-		let playerChoice = window.prompt("Please pick Rock, Paper, or Scissors.");
-		while (!isValid(playerChoice)) {
-			playerChoice = window.prompt("Invalid response. Please pick Rock, Paper, or Scissors.");
-		}
-		let roundResult = playRound(playerChoice, computerPlay());
-		playerScore += roundResult[1];
-		computerScore += roundResult[2];
-		console.log(roundResult[0] + "\nPlayer Score is " + playerScore + "\nComputer Score is " + computerScore);
+	let playerChoice = window.prompt("Please pick Rock, Paper, or Scissors.");
+	while (!isValid(playerChoice)) {
+		playerChoice = window.prompt("Invalid response. Please pick Rock, Paper, or Scissors.");
 	}
+	let roundResult = playRound(playerChoice, computerPlay());
+	playerScore += roundResult[1];
+	computerScore += roundResult[2];
+	console.log(roundResult[0] + "\nPlayer Score is " + playerScore + "\nComputer Score is " + computerScore);
 	if (playerScore > computerScore) {
 		console.log("You Win!");
 	} else if (playerScore < computerScore) {
@@ -62,4 +60,3 @@ function game() {
 		console.log("It's a Draw!");
 	}
 }
-
