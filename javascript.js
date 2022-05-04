@@ -1,3 +1,7 @@
+document.getElementById("btn").addEventListener("click", function() {
+  alert("test test");
+});
+
 function computerPlay() {
 	let options = ["rock", "paper", "scissors"];
 	let choice = options[Math.floor(Math.random() * 3)];
